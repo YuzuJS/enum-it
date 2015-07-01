@@ -22,8 +22,22 @@
     "test": "mocha test --recursive",
     "githooks": "cp pre-* ./.git/hooks"
   },
+  "author": {
+    "name": "YuzuJS"
+  },
   "author": "Paul Bouzakis <npm@paulbouzakis.com>",
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "Donavon West",
+      "email": "email@donavon.com",
+      "url": "http://donavon.com"
+    },
+    {
+      "name": "Paul Bouzakis",
+      "email": "coding@paulbouzakis.com",
+      "url": "http://paulbouzakis.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/YuzuJS/enumit.git"
