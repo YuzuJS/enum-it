@@ -19,4 +19,18 @@ export default class Enum {
     keys() {
         return this._values.map((enumValue) => enumValue.value);
     }
+
+    valueOf() {
+        var result = {};
+        this._values.forEach((enumValue) => result[enumValue.value] = enumValue.toNumber());
+        return result;
+    }
+
+    toString() {
+        return JSON.stringify(this);
+    }
+
+    toJSON() {
+        return this.valueOf();
+    }
 }
