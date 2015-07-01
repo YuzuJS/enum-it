@@ -1,5 +1,8 @@
 import Enum from "../src/Enum";
 
+const states = { UNKNOWN: 1, READY: 2, PENDING: 3 };
+const statesJson = JSON.stringify(states);
+
 describe("Enum", function () {
     beforeEach(() => {
         this.States = new Enum("UNKNOWN", "READY", "PENDING");
@@ -13,6 +16,18 @@ describe("Enum", function () {
 
     it("should expose keys as an array", () => {
         this.States.keys().should.be.instanceof(Array);
+    });
+
+    it("should return the correct value", () => {
+        this.States.valueOf().should.be.eql(states);
+    });
+
+    it("should return the correct string value", () => {
+        this.States.toString().should.equal(statesJson);
+    });
+
+    it("should return the correct JSON value", () => {
+        JSON.stringify(this.States).should.be.eql(statesJson);
     });
 
     it("should have the right keys", () => {
