@@ -3,6 +3,8 @@
 Super simple Enum's for JavaScript.
 
 ```javascript
+var Enum = require("enumit");
+
 var State = new Enum("ON", "OFF");
 
 var myState = State.ON; // myState is an instanceof EnumValue (private class of Enum)

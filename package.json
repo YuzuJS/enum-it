@@ -1,6 +1,6 @@
 {
   "name": "enumit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "YuzuJS",
   "description": "An enum type for JS!",
   "main": "./lib/Enum.js",
@@ -16,7 +16,7 @@
     "sinon-chai": ">= 2.1.0"
   },
   "scripts": {
-    "prepublish": "npm run lint && npm test && npm build",
+    "prepublish": "npm run lint && npm test && npm run build",
     "build": "babel src --out-dir lib",
     "lint": "jshint src test",
     "test": "mocha test --recursive",
