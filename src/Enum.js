@@ -1,6 +1,6 @@
 class EnumValue {
     constructor(key, asNumber) {
-        this._key = key.toUpperCase();
+        this._key = key;
         this._number = asNumber;
     }
 
