@@ -1,5 +1,8 @@
 export default class EnumValue {
     constructor(key, asNumber) {
+        if (typeof key !== "string") {
+            throw new TypeError("EnumValue: key must be a string");
+        }
         this._key = key;
         this._number = asNumber;
     }

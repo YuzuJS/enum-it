@@ -26,4 +26,10 @@ describe("EnumValue", function () {
             });
         });
     });
+
+    describe("when passed a non-string key", () => {
+        it("should throw a TypeError", () => {
+            (() => new EnumValue(100, 100)).should.throw(TypeError);
+        });
+    });
 });
