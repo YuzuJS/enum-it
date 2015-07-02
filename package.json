@@ -1,6 +1,6 @@
 {
   "name": "enumit",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "YuzuJS",
   "description": "An enum type for JS!",
   "main": "./lib/Enum.js",
