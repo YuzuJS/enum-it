@@ -1,12 +1,19 @@
 import Enum from "../src/Enum";
 import EnumValue from "../src/EnumValue";
 
-const states = { UNKNOWN: 1, READY: 2, PENDING: 3 };
-const statesJson = JSON.stringify(states);
+var tests = (options) => function () {
+    var args = ["UNKNOWN", "READY", "PENDING"];
+    if (options) {
+        args.push(options);
+    } else {
+        options = { startNumber: 1 };
+    }
 
-describe("Enum", function () {
+    const states = { UNKNOWN: options.startNumber, READY: options.startNumber + 1, PENDING: options.startNumber + 2 };
+    const statesJson = JSON.stringify(states);
+
     beforeEach(() => {
-        this.States = new Enum("UNKNOWN", "READY", "PENDING");
+        this.States = new Enum(...args);
     });
 
     it("should expose all enum values", () => {
@@ -51,9 +58,14 @@ describe("Enum", function () {
         });
 
         it("should have a the correct toNumber value", () => {
-            this.States.UNKNOWN.toNumber().should.equal(1);
-            this.States.READY.toNumber().should.equal(2);
-            this.States.PENDING.toNumber().should.equal(3);
+            this.States.UNKNOWN.toNumber().should.equal(options.startNumber);
+            this.States.READY.toNumber().should.equal(options.startNumber + 1);
+            this.States.PENDING.toNumber().should.equal(options.startNumber + 2);
         });
     });
+};
+
+describe("Enum", function () {
+    describe("with no options", tests());
+    describe("with option.startNumber = 100", tests({ startNumber: 100 }));
 });
