@@ -3,7 +3,11 @@ import EnumValue from "./EnumValue";
 export default class Enum {
     constructor(...keys) {
         this._values = [];
-        keys.forEach((key, index) => this._defineEnumValueProperty(key, index + 1));
+        var options = { startNumber: 1 };
+        if (typeof keys[keys.length-1] === "object") {
+            options = keys.pop();
+        }
+        keys.forEach((key, index) => this._defineEnumValueProperty(key, options.startNumber + index));
     }
 
     _defineEnumValueProperty(key, value) {
