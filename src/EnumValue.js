@@ -22,4 +22,8 @@ export default class EnumValue {
     valueOf() {
         return this.value;
     }
+
+    toJSON() {
+        return this.value;
+    }
 }

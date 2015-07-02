@@ -9,6 +9,12 @@ describe("EnumValue", function () {
         this.State.value.should.equal("foo");
     });
 
+    describe("when passed to JSON.stringify", () => {
+        it("should return the quoted key", () => {
+            JSON.stringify(this.State).should.equal(JSON.stringify("foo"));
+        });
+    });
+
     describe("when converted to a primitive", () => {
         describe("by casting to a String", () => {
             it("should return the key", () => {
